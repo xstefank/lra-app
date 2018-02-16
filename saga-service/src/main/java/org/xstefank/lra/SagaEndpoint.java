@@ -4,8 +4,10 @@ import org.jboss.logging.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.net.MalformedURLException;
 
@@ -22,6 +24,13 @@ public class SagaEndpoint {
     @Consumes(MediaType.TEXT_PLAIN)
     public String initSaga(String name) throws MalformedURLException {
         return sagaService.startSaga(name);
+    }
+
+    @GET
+    @Path("/health")
+    @Produces("text/plain")
+    public String health() {
+        return "I'm ok";
     }
 
 }
