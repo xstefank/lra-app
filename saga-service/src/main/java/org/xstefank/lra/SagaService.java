@@ -5,15 +5,16 @@ import org.xstefank.lra.definition.rest.RESTAction;
 import org.xstefank.lra.definition.rest.RESTLra;
 import org.xstefank.lra.definition.rest.RESTLraBuilder;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@ApplicationScoped
+@Stateless
 public class SagaService {
 
     @Inject
+    @CurrentLRAClient
     private NarayanaLRAClient lraClient;
 
     public String startSaga(String name) throws MalformedURLException {
