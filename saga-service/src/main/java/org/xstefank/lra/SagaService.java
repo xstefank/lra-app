@@ -17,12 +17,12 @@ public class SagaService {
     @CurrentLRAClient
     private NarayanaLRAClient lraClient;
 
-    public String startSaga(String name) throws MalformedURLException {
+    public String startSaga(String name, String uri) throws MalformedURLException {
         RESTLra lra = RESTLraBuilder.lra()
                 .name("testing saga")
                 .data(42)
                 .withAction(RESTAction.post(new URL("http://participant1-service:8080")))
-                .subscrbeCallerAsParticipant()
+                .callback(uri)
                 .build();
 
         URL lraId = lraClient.startLRAAsync(lra);
