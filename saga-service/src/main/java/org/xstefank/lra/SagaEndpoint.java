@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
-import java.net.MalformedURLException;
 
 @Path("/")
 public class SagaEndpoint {
@@ -27,7 +26,7 @@ public class SagaEndpoint {
     @POST
     @Path("/init")
     @Consumes(MediaType.TEXT_PLAIN)
-    public String initSaga(String name) throws MalformedURLException {
+    public String initSaga(String name) throws Exception {
         return sagaService.startSaga(name, uriInfo.getBaseUri().toString());
     }
 

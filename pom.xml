@@ -10,7 +10,6 @@
     <modules>
         <module>saga-service</module>
         <module>participant1-service</module>
-        <module>lra-coordinator</module>
     </modules>
 
     <name>lra-app</name>

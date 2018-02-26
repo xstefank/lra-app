@@ -15,7 +15,7 @@ public class ParticipantEndpoint {
     private static final Logger log = Logger.getLogger(ParticipantEndpoint.class);
 
     @POST
-    @Consumes(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
     public void invokeParticipant() {
         log.info("Participant endpoint invoked");
     }
