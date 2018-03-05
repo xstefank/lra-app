@@ -106,5 +106,11 @@
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>logging</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.jboss.narayana.rts</groupId>
+            <artifactId>lra-filters</artifactId>
+            <version>5.7.2.Final</version>
+        </dependency>
     </dependencies>
 </project>
