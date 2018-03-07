@@ -99,7 +99,7 @@
         <dependency>
             <groupId>org.jboss.narayana.rts</groupId>
             <artifactId>lra-client</artifactId>
-            <version>5.8.0.Final</version>
+            <version>${version.narayana}</version>
         </dependency>
 
         <dependency>

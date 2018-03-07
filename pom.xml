@@ -16,6 +16,11 @@
     <url>http://maven.apache.org</url>
 
 
+    <properties>
+        <version.narayana>5.8.1.Final-SNAPSHOT</version.narayana>
+    </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

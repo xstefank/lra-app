@@ -25,9 +25,10 @@ public class SagaService {
                 .callback(uri)
                 .build();
 
-        URL lraId = lraClient.startLRAAsync(lra);
+//        URL lraId = lraClient.startLRAAsync(lra);
 
-        return lraId.toString();
+//        return lraId.toString();
+        return "";
     }
 
 }
