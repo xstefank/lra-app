@@ -27,6 +27,7 @@ public class SagaEndpoint {
     @Path("/init")
     @Consumes(MediaType.TEXT_PLAIN)
     public String initSaga(String name) throws Exception {
+        log.info("starting saga " + name);
         return sagaService.startSaga(name, uriInfo.getBaseUri().toString());
     }
 

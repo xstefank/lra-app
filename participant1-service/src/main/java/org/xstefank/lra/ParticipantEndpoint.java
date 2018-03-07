@@ -1,7 +1,7 @@
 package org.xstefank.lra;
 
 import io.narayana.lra.annotation.LRA;
-import io.narayana.lra.client.NarayanaLRAClient;
+import io.narayana.lra.client.LRAClient;
 import org.jboss.logging.Logger;
 
 import javax.ws.rs.Consumes;
@@ -18,9 +18,10 @@ public class ParticipantEndpoint {
     private static final Logger log = Logger.getLogger(ParticipantEndpoint.class);
 
     @POST
+    @Path("/request")
     @Consumes(MediaType.APPLICATION_JSON)
     @LRA(LRA.Type.REQUIRED)
-    public void invokeParticipant(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String lraUri, Object data) {
+    public void invokeParticipant(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String lraUri, Object data) {
         log.info("Participant endpoint invoked -- " + lraUri);
     }
 
