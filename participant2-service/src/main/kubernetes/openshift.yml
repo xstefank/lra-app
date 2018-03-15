@@ -7,38 +7,38 @@ items:
   metadata:
     labels:
       expose: "true"
-      app: participant1-service
-    name: participant1-service
+      app: participant2-service
+    name: participant2-service
   spec:
     ports:
     - name: http
       port: 8080
     selector:
-      app: participant1-service
+      app: participant2-service
 - apiVersion: extensions/v1beta1
   kind: Deployment
   metadata:
     labels:
-      app: participant1-service
+      app: participant2-service
       version: v1
-    name: participant1-service
+    name: participant2-service
   spec:
     replicas: 1
     selector:
       matchLabels:
-        app: participant1-service
+        app: participant2-service
         version: v1
     template:
       metadata:
         labels:
-          app: participant1-service
+          app: participant2-service
           version: v1
       spec:
         containers:
         - env:
           - name: JAVA_OPTIONS
             value: -Xms128m -Xmx256m
-          image: xstefank/participant1-service:latest
+          image: xstefank/participant2-service:latest
           imagePullPolicy: IfNotPresent
           livenessProbe:
             exec:
@@ -68,11 +68,11 @@ items:
   metadata:
     labels:
       expose: "true"
-      app: participant1-service
-    name: participant1-service
+      app: participant2-service
+    name: participant2-service
   spec:
     port:
       targetPort: 8080
     to:
       kind: Service
-      name: participant1-service
+      name: participant2-service

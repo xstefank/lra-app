@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lra-app</artifactId>
+        <groupId>org.xstefank.lra</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <!--<parent>-->
-        <!--<groupId>org.xstefank.lra</groupId>-->
-        <!--<artifactId>lra-app</artifactId>-->
-        <!--<version>1.0-SNAPSHOT</version>-->
-    <!--</parent>-->
+    <artifactId>participant2-service</artifactId>
 
-    <groupId>org.xstefank.lra</groupId>
-    <artifactId>saga-service</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-
-    <name>Saga service</name>
 
     <properties>
-        <version.wildfly.swarm>2018.3.3</version.wildfly.swarm>
+        <version.wildfly.swarm>2018.1.0</version.wildfly.swarm>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -37,7 +33,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>saga-service</finalName>
+        <finalName>participant2-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.wildfly.swarm</groupId>
@@ -106,13 +102,6 @@
     </profiles>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.jboss.narayana.rts</groupId>
-            <artifactId>lra-client</artifactId>
-            <version>5.8.1.Final-SNAPSHOT</version>
-        </dependency>
-
         <!-- Java EE 7 dependency -->
         <dependency>
             <groupId>javax</groupId>
@@ -133,13 +122,12 @@
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>cdi</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.wildfly.swarm</groupId>
-            <artifactId>ejb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.swarm</groupId>
-            <artifactId>cdi-jaxrsapi</artifactId>
+            <groupId>org.jboss.narayana.rts</groupId>
+            <artifactId>lra-filters</artifactId>
+            <version>${version.narayana}</version>
         </dependency>
     </dependencies>
+
 </project>

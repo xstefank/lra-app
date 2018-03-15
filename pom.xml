@@ -10,6 +10,7 @@
     <modules>
         <module>saga-service</module>
         <module>participant1-service</module>
+        <module>participant2-service</module>
     </modules>
 
     <name>lra-app</name>
