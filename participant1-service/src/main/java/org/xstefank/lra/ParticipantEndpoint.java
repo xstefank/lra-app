@@ -29,7 +29,7 @@ public class ParticipantEndpoint {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     @LRA(value = LRA.Type.REQUIRED)
-    public Response requestShipment(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String lraUri, Object data) throws InterruptedException {
+    public Response request(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String lraUri, Object data) throws InterruptedException {
         String lraId = NarayanaLRAClient.getLRAId(lraUri);
         log.info("processing request for LRA " + lraId);
 

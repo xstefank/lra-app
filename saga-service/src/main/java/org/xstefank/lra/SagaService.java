@@ -26,9 +26,9 @@ public class SagaService {
                 .callback(uri)
                 .build();
 
-        URL lraId = lraClient.startLRA(lra);
+        lraClient.startLRA(lra);
 
-        return "Invocation saga-sevice: " + lraId.toString();
+        return "Invocation saga-sevice completed";
     }
 
 }
