@@ -124,11 +124,5 @@
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>cdi</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.jboss.narayana.rts</groupId>
-            <artifactId>lra-filters</artifactId>
-            <version>${version.narayana}</version>
-        </dependency>
     </dependencies>
 </project>

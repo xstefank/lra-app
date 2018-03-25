@@ -2,7 +2,6 @@ package org.xstefank.lra;
 
 import io.narayana.lra.annotation.Compensate;
 import io.narayana.lra.annotation.Complete;
-import io.narayana.lra.annotation.LRA;
 import io.narayana.lra.client.NarayanaLRAClient;
 import org.jboss.logging.Logger;
 
@@ -28,7 +27,6 @@ public class ParticipantEndpoint {
     @Path("/request")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    @LRA(value = LRA.Type.REQUIRED)
     public Response request(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String lraUri, Object data) throws InterruptedException {
         String lraId = NarayanaLRAClient.getLRAId(lraUri);
         log.info("processing request for LRA " + lraId);

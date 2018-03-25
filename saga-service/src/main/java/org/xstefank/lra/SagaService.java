@@ -22,7 +22,7 @@ public class SagaService {
                 .name("testing saga")
                 .data(42)
                 .withAction(RESTAction.post(new URL("http://participant1-service:8080/api/request")))
-                .withAction(RESTAction.post(new URL("http://participant2-service:8080/api/request")))
+//                .withAction(RESTAction.post(new URL("http://participant2-service:8080/api/request")))
                 .callback(uri)
                 .build();
 
