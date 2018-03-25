@@ -1,9 +1,9 @@
-FROM fabric8/java-jboss-openjdk8-jdk:1.2.3
-
-ENV JAVA_APP_JAR saga-service-swarm.jar
-ENV AB_ENABLED off
-ENV JAVA_OPTIONS -Xmx512m
+FROM java:openjdk-8-jdk
 
 EXPOSE 8080
 
-ADD target/saga-service-swarm.jar /deployments/
+RUN touch /audit.log && chmod 777 /audit.log
+
+ADD target/saga-service-swarm.jar /opt/saga-service-swarm.jar
+
+CMD java $JAVA_OPTIONS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -jar /opt/saga-service-swarm.jar

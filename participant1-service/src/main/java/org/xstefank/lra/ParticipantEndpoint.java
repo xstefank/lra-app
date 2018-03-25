@@ -22,7 +22,7 @@ public class ParticipantEndpoint {
     private static final Logger log = Logger.getLogger(ParticipantEndpoint.class);
 
     @POST
-    @Path("/request")
+    @Path("/")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response request(@HeaderParam(LRA_HTTP_HEADER) String lraUri, Object data) throws InterruptedException {
