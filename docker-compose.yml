@@ -1,0 +1,28 @@
+
+version: "2.1"
+
+services:
+  saga-service:
+    build: ./saga-service
+    ports:
+      - "8080:8080"
+
+  participant1-service:
+    build: ./participant1-service
+    ports:
+      - "8081:8080"
+
+  participant2-service:
+    build: ./participant2-service
+    ports:
+      - "8082:8080"
+
+  lra-coordinator:
+    image: xstefank/lra-coordinator:5.8.1.Final
+    ports:
+      - "8083:8080"
+
+
+
+
+

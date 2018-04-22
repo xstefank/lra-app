@@ -6,4 +6,4 @@ RUN touch /audit.log && chmod 777 /audit.log
 
 ADD target/participant1-service-swarm.jar /opt/participant1-service-swarm.jar
 
-CMD java $JAVA_OPTIONS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -jar /opt/participant1-service-swarm.jar
+CMD java $JAVA_OPTIONS -jar /opt/participant1-service-swarm.jar -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true
