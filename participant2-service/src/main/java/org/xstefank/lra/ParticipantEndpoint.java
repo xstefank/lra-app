@@ -1,5 +1,6 @@
 package org.xstefank.lra;
 
+import io.narayana.lra.rest.ParticipantCallback;
 import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -15,7 +16,7 @@ import javax.ws.rs.core.Response;
 
 @ApplicationScoped
 @Path("/")
-public class ParticipantEndpoint {
+public class ParticipantEndpoint implements ParticipantCallback {
 
     private static final String LRA_HTTP_HEADER = "Long-Running-Action";
 
@@ -40,20 +41,16 @@ public class ParticipantEndpoint {
                 .build();
     }
 
-    @PUT
-    @Path("/complete")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response completeWork(@HeaderParam(LRA_HTTP_HEADER) String lraUri) {
+    @Override
+    public Response complete(String lraUri) {
         String lraId = lraUri;
         log.info("completing participant2 for LRA " + lraId);
 
         return Response.ok().build();
     }
 
-    @PUT
-    @Path("/compensate")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response compensateWork(@HeaderParam(LRA_HTTP_HEADER) String lraUri) {
+    @Override
+    public Response compensate(String lraUri) {
         String lraId = lraUri;
         log.info("compensating participant2 for LRA " + lraId);
 
