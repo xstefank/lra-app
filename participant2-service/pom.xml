@@ -88,11 +88,11 @@
                         </configuration>
                         <executions>
                             <execution>
-                                <id>fmp</id>
+                                <id>fabric8</id>
                                 <goals>
                                     <goal>resource</goal>
-                                    <goal>helm</goal>
                                     <goal>build</goal>
+                                    <goal>helm</goal>
                                 </goals>
                             </execution>
                         </executions>
