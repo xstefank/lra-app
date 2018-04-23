@@ -10,7 +10,7 @@ image:https://www.openshift.com/images/logos/powered_by_openshift.png[Powered by
 
 [NOTE]
 ====
-Required docker and docker-compose installed (https://www.docker.com/get-docker, https://docs.docker.com/compose/install/)
+Requiring docker and docker-compose installed (https://www.docker.com/get-docker, https://docs.docker.com/compose/install/)
 ====
 
 1. Build project
