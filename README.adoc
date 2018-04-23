@@ -1,0 +1,40 @@
+= lra-app
+
+image:https://www.openshift.com/images/logos/powered_by_openshift.png[Powered by OpenShift Online]
+
+== Testing quickstart application for LRA executor extension
+
+=== Running
+
+==== Docker compose
+
+[NOTE]
+====
+Required docker and docker-compose installed (https://www.docker.com/get-docker, https://docs.docker.com/compose/install/)
+====
+
+1. Build project
+** `mvn clean install`
+
+2. Start docker compose
+** `docker-compose up --build`
+
+3. Invoke the asynchronous LRA
+** `curl -X POST -H "Content-Type: text/plain" -d "test saga" "http://localhost:8080/api/init"`
+
+==== Openshift
+
+1. Log in to the OS online and create a project
+** `oc login ...` (full login command can be found in OS online console)
+** `oc new-project lra-executor-quickstart`
+
+2. Build and deploy project
+** `mvn -Pfabric8 fabric8:deploy`
+
+3. Deploy lra-coordinator with included LRA executor extension
+** `oc create -f lra-coordinator/openshift.yml`
+
+4. Invoke the asynchronous LRA
+** `curl -X POST -H "Content-Type: text/plain" -d "test saga" "http://saga-service-lra-executor-quickstart.{OPENSHIFT_ADDRESS}/api/init"`
+
+
