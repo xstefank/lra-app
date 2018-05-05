@@ -1,4 +1,4 @@
-= lra-app
+= LRA executor quickstart
 
 image:https://www.openshift.com/images/logos/powered_by_openshift.png[Powered by OpenShift Online]
 
