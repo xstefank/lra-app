@@ -108,7 +108,12 @@
         <dependency>
             <groupId>org.jboss.narayana.rts</groupId>
             <artifactId>lra-client</artifactId>
-            <version>5.8.1.Final-SNAPSHOT</version>
+            <version>5.8.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.narayana.rts</groupId>
+            <artifactId>lra-rest-definitions</artifactId>
+            <version>5.8.1.Final</version>
         </dependency>
 
         <!-- Java EE 7 dependency -->

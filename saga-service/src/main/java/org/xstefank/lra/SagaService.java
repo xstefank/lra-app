@@ -1,9 +1,9 @@
 package org.xstefank.lra;
 
 import io.narayana.lra.client.NarayanaLRAClient;
-import org.xstefank.lra.definition.rest.RESTAction;
-import org.xstefank.lra.definition.rest.RESTLra;
-import org.xstefank.lra.definition.rest.RESTLraBuilder;
+import io.narayana.lra.rest.RESTAction;
+import io.narayana.lra.rest.RESTLra;
+import io.narayana.lra.rest.RESTLraBuilder;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ public class SagaService {
     @CurrentLRAClient
     private NarayanaLRAClient lraClient;
 
-    public String startSaga(String name, String uri) throws MalformedURLException, URISyntaxException {
+    public String startSaga(String name) throws MalformedURLException, URISyntaxException {
 
         URL participant2Url = new URL(PARTICIPANT2_URL);
 
@@ -34,7 +34,7 @@ public class SagaService {
                         .post(UriBuilder.fromUri(participant2Url.toURI()).path("/request").build().toURL())
                         .callbackUrl(participant2Url)
                         .build())
-                .callback(uri)
+                .callback("http://saga-service:8080/api")
                 .build();
 
         lraClient.startLRA(lra);
