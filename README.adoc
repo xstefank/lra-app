@@ -6,11 +6,16 @@ image:https://www.openshift.com/images/logos/powered_by_openshift.png[Powered by
 
 === Running
 
+==== Setup
+
+- Run setup file - `./setup.sh`
+  - it will clone and install `lra-executor-extension`, `lra-rest-definitions`, and updated `lra-client`
+
 ==== Docker compose
 
 [NOTE]
 ====
-Requiring docker and docker-compose installed (https://www.docker.com/get-docker, https://docs.docker.com/compose/install/)
+Requires docker and docker-compose installed (https://www.docker.com/get-docker, https://docs.docker.com/compose/install/)
 ====
 
 1. Build project
